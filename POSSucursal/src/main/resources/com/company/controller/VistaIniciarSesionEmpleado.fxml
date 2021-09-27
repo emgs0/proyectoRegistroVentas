@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.VistaIniciarSesionEmpleadoController">
+   <children>
+      <Label fx:id="lblTitle" layoutX="202.0" layoutY="26.0" text="Inicio de sesión - Empleado">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" layoutX="160.0" layoutY="71.0" text="Inicio de sesion exclusivo para los empleados de la compañia">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSelection" layoutX="165.0" layoutY="188.0" text="Nombre de usuario:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="408.0" text="Logo de la empresa">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="402.0" layoutY="125.0" text="Mostrar la fecha y hora actual del sistema">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Line endX="500.0" layoutX="158.0" layoutY="115.0" startX="-120.0" />
+      <Button fx:id="btnLoginMain" layoutX="219.0" layoutY="319.0" mnemonicParsing="false" onAction="#switchToEmployee" text="Inicia sesión">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblSelection1" layoutX="168.0" layoutY="256.0" text="Contraseña:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnLoginMain1" layoutX="392.0" layoutY="319.0" mnemonicParsing="false" onAction="#switchToPrincipal" text="Cancelar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField layoutX="350.0" layoutY="180.0" prefHeight="35.0" prefWidth="175.0" />
+      <TextField layoutX="353.0" layoutY="250.0" prefHeight="35.0" prefWidth="175.0" />
+   </children>
+</AnchorPane>

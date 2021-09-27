@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.PrincipalController">
+   <children>
+      <Label fx:id="lblTitle" layoutX="176.0" layoutY="27.0" text="Sistema de Gestión de las ventas">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" layoutX="144.0" layoutY="71.0" text="Bienvenido al sistema de administracion y gestion de su compañia ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSelection" layoutX="175.0" layoutY="200.0" text="Iniciar el sistema como:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="288.0" layoutY="368.0" text="Logo de la empresa">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="rbSelectOptionMain" layoutX="372.0" layoutY="201.0" prefWidth="150.0" />
+      <Line endX="500.0" layoutX="158.0" layoutY="115.0" startX="-120.0" />
+      <Button fx:id="btnLoginMain" layoutX="305.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchToLogin" text="Ingresar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtDate" editable="false" layoutX="534.0" layoutY="125.0" prefHeight="25.0" prefWidth="125.0" />
+   </children>
+</AnchorPane>
