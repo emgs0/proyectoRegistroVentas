@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.VistaModificarEmpleadoController">
+   <children>
+      <Label fx:id="lblTitle" layoutX="213.0" layoutY="37.0" text="Modificar Empleado">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" layoutX="196.0" layoutY="108.0" text="Llenar todos los campos para actualizar al empleado">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="72.0" text="Logo de la empresa">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="422.0" layoutY="145.0" text="Mostrar la fecha y hora actual del sistema">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Line endX="500.0" layoutX="178.0" layoutY="135.0" startX="-120.0" />
+      <VBox layoutX="137.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="463.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="395.0">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="156.0" text="Nombre de Usuario">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtUsuario" prefHeight="36.0" prefWidth="227.0" promptText="Ingrese nombre de usuario unico">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="395.0">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="157.0" text="Contraseña">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtContrasena" prefHeight="36.0" prefWidth="227.0" promptText="Ingrese la contraseña a asignar">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="395.0">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="157.0" text="Confirmar Contraseña">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtContrasena2" prefHeight="36.0" prefWidth="228.0" promptText="Confirmar la contraseña">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="395.0">
+               <children>
+                  <RadioButton fx:id="radioAdmin" mnemonicParsing="false" prefHeight="33.0" prefWidth="157.0" text="Administrador">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="radioEmpleado" mnemonicParsing="false" prefHeight="33.0" prefWidth="129.0" text="Empleado">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="463.0">
+               <children>
+                  <Button fx:id="btnModificarEmpleado" mnemonicParsing="false" onAction="#updateDB" prefHeight="40.0" prefWidth="115.0" text="Modificar">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnCancelarRegistro" mnemonicParsing="false" onAction="#returnToAdministrador" prefHeight="40.0" prefWidth="115.0" text="Cancelar">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
