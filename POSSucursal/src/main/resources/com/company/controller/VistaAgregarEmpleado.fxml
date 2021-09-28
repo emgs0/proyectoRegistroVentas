@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -9,32 +10,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.company.controller.VistaAgregarEmpleadoController">
-   <children>
-      <Label fx:id="lblTitle" layoutX="213.0" layoutY="37.0" text="Agregar Nuevo Empleado">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblDescription" layoutX="196.0" layoutY="108.0" text="Llenar todos los campos para registrar al empleado">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="58.0" layoutY="72.0" text="Logo de la empresa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="422.0" layoutY="145.0" text="Mostrar la fecha y hora actual del sistema">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Line endX="500.0" layoutX="178.0" layoutY="135.0" startX="-120.0" />
-      <VBox layoutX="137.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="463.0">
+<BorderPane prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.AgregarEmpleadoController">
+   <center>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="420.0" BorderPane.alignment="CENTER">
          <children>
+            <Label prefHeight="54.0" prefWidth="288.0" text="Registrar Datos de Empleado">
+               <font>
+                  <Font name="Calibri Light" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
             <HBox prefHeight="40.0" prefWidth="395.0">
                <children>
                   <Label prefHeight="35.0" prefWidth="156.0" text="Nombre de Usuario">
@@ -45,7 +32,7 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txtUsuario" prefHeight="36.0" prefWidth="227.0" promptText="Ingrese nombre de usuario unico">
+                  <TextField fx:id="txtUsuario" alignment="TOP_LEFT" prefHeight="36.0" prefWidth="227.0" promptText="Ingrese nombre de usuario unico">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -65,13 +52,13 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txtContrasena" prefHeight="36.0" prefWidth="227.0" promptText="Ingrese la contraseña a asignar">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
+                  <TextField fx:id="txtContrasena" alignment="TOP_LEFT" prefHeight="36.0" prefWidth="227.0" promptText="Ingrese la contraseña a asignar">
                      <font>
                         <Font size="14.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </TextField>
                </children>
                <VBox.margin>
@@ -88,13 +75,13 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txtContrasena2" prefHeight="36.0" prefWidth="228.0" promptText="Confirmar la contraseña">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
+                  <TextField fx:id="txtContrasena2" alignment="TOP_LEFT" prefHeight="36.0" prefWidth="228.0" promptText="Confirmar la contraseña">
                      <font>
                         <Font size="14.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </TextField>
                </children>
                <VBox.margin>
@@ -104,12 +91,12 @@
             <HBox alignment="CENTER" prefHeight="40.0" prefWidth="395.0">
                <children>
                   <RadioButton fx:id="radioAdmin" mnemonicParsing="false" prefHeight="33.0" prefWidth="157.0" text="Administrador">
-                     <HBox.margin>
-                        <Insets left="20.0" right="20.0" />
-                     </HBox.margin>
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
                   </RadioButton>
                   <RadioButton fx:id="radioEmpleado" mnemonicParsing="false" prefHeight="33.0" prefWidth="129.0" text="Empleado">
                      <font>
@@ -124,12 +111,12 @@
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="463.0">
                <children>
                   <Button fx:id="btnRegistrarEmpleado" mnemonicParsing="false" onAction="#insertToDB" prefHeight="40.0" prefWidth="115.0" text="Registrar">
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
                   </Button>
                   <Button fx:id="btnCancelarRegistro" mnemonicParsing="false" onAction="#returnToAdministrador" prefHeight="40.0" prefWidth="115.0" text="Cancelar">
                      <font>
@@ -146,5 +133,68 @@
             </HBox>
          </children>
       </VBox>
-   </children>
-</AnchorPane>
+   </center>
+   <top>
+      <HBox prefHeight="180.0" prefWidth="800.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="800.0">
+               <children>
+                  <Label fx:id="lblTitle1" text="Sistema de Gestión de las ventas" textFill="WHITE" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Light" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lblDescription1" text="Bienvenido al sistema de administracion y gestion de su compañia " textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDate" editable="false" maxWidth="180.0" prefHeight="34.0" prefWidth="240.0" promptText="Mostrar la fecha y hora actual del sistema">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <ImageView fx:id="imageMain" fitHeight="136.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image1.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets right="50.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Derechos de autor - sistema de gestión" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

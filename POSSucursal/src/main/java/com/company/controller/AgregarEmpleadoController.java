@@ -5,6 +5,10 @@
  */
 package com.company.controller;
 
+import com.company.controller.App;
+import com.company.controller.App;
+import com.company.controller.PrincipalController;
+import com.company.controller.PrincipalController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,18 +19,23 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
  *
  * @author e-emgarza
  */
-public class VistaModificarEmpleadoController implements Initializable {
+public class AgregarEmpleadoController implements Initializable {
 
     @FXML
-    private Label lblTitle;
+    private Label lblTitle1;
     @FXML
-    private Label lblDescription;
+    private Label lblDescription1;
+    @FXML
+    private TextField txtDate;
+    @FXML
+    private ImageView imageMain;
     @FXML
     private TextField txtUsuario;
     @FXML
@@ -38,7 +47,7 @@ public class VistaModificarEmpleadoController implements Initializable {
     @FXML
     private RadioButton radioEmpleado;
     @FXML
-    private Button btnModificarEmpleado;
+    private Button btnRegistrarEmpleado;
     @FXML
     private Button btnCancelarRegistro;
 
@@ -47,11 +56,11 @@ public class VistaModificarEmpleadoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        PrincipalController.dateAndHour(this.txtDate);
     }
 
     @FXML
-    private void updateDB(ActionEvent event) {
+    private void insertToDB(ActionEvent event) {
         try {
             App.setRoot("VistaListaEmpleado");
         } catch (IOException e) {

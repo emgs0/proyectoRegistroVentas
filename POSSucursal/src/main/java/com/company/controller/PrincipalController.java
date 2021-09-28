@@ -16,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class PrincipalController implements Initializable{
@@ -24,7 +23,7 @@ public class PrincipalController implements Initializable{
     // Controlls
     @FXML private Label lblTitle;
     @FXML private Label lblDescription;
-    @FXML private ComboBox<?> rbSelectOptionMain;
+    @FXML private ComboBox<String> rbSelectOptionMain;
     @FXML private Button btnLoginMain;
     @FXML private TextField txtDate;
     @FXML private ImageView imageMain;
@@ -37,18 +36,8 @@ public class PrincipalController implements Initializable{
             );
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        rbSelectOptionMain.setItems(optionEmployee);
         dateAndHour(this.txtDate);
-    }
-    
-    // Login as 'Empledo' or 'Administrador'
-    @FXML
-    private void switchToLogin(ActionEvent event) throws IOException {
-
-        try {
-            App.setRoot("VistaIniciarSesionEmpleado");
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
     }
     
     public static void dateAndHour(TextField txtdate){
@@ -63,15 +52,12 @@ public class PrincipalController implements Initializable{
                     txtdate.setText(dtf.format(now));
                 }
             };
-
             timer.schedule(task, 0, 1000);
-           
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-
     }
-    
+  
     @FXML
     private void switchToLogin(ActionEvent event) throws IOException {
         if (rbSelectOptionMain.getSelectionModel().getSelectedItem() == "Administrador") {

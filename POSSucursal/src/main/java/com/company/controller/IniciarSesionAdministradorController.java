@@ -1,10 +1,11 @@
-package com.company.controller;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.company.controller;
+
+import com.company.controller.App;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,67 +14,53 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
  *
  * @author e-emgarza
  */
-public class VistaListaEmpleadoController implements Initializable {
+public class IniciarSesionAdministradorController implements Initializable {
 
     @FXML
-    private Label lblDescription;
+    private Label lblTitle1;
     @FXML
-    private Label lblTitle;
+    private Label lblDescription1;
     @FXML
-    private TableView<?> tableEmployees;
+    private TextField txtDate;
     @FXML
-    private Button btnGenerateEmployee;
+    private ImageView imageMain;
     @FXML
-    private Button btnModEmployee;
+    private Label lblSelection;
     @FXML
-    private Button btnDelEmployee;
-    @FXML
-    private Button btnReturn;
+    private Button btnLoginMain;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
+        PrincipalController.dateAndHour(this.txtDate);
+    }    
 
     @FXML
-    private void generateNewEmployee(ActionEvent event) {
+    private void switchToAdmin(ActionEvent event) {
         try {
-            App.setRoot("VistaAgregarEmpleado");
+            App.setRoot("VistaAdministrador");//cambiar a admin
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
 
     @FXML
-    private void modifyEmployee(ActionEvent event) {
+    private void switchToPrincipal(ActionEvent event) {
         try {
-            App.setRoot("VistaModificarEmpleado");
+            App.setRoot("VistaPrincipal");
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
-    @FXML
-    private void deleteEmployee(ActionEvent event) {
-    }
-
-    @FXML
-    private void returnToAdministrador(ActionEvent event) {
-        try {
-            App.setRoot("VistaAdministrador");
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
-
+    
 }
