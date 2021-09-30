@@ -12,6 +12,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -20,20 +22,22 @@ import javafx.scene.image.ImageView;
 
 public class PrincipalController implements Initializable{
     
+    private Boolean administrador =false;    
     // Controlls
     @FXML private Label lblTitle;
     @FXML private Label lblDescription;
     @FXML private ComboBox<String> rbSelectOptionMain;
-    @FXML private Button btnLoginMain;
     @FXML private TextField txtDate;
     @FXML private ImageView imageMain;
-    
+    @FXML private Label lblSelection;
+    @FXML private TextField txtUserName;
+    @FXML private TextField txtPassword;
+    @FXML private Button btnLogin;
       
-    ObservableList<String> optionEmployee
-            = FXCollections.observableArrayList(
+    ObservableList<String> optionEmployee = FXCollections.observableArrayList(
                     "Administrador",
-                    "Empleado"
-            );
+                    "Empleado");
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         rbSelectOptionMain.setItems(optionEmployee);
@@ -57,21 +61,29 @@ public class PrincipalController implements Initializable{
             System.out.println("Error: " + e.getMessage());
         }
     }
-  
+
     @FXML
-    private void switchToLogin(ActionEvent event) throws IOException {
+    private void switchToEmployee(ActionEvent event) {
         if (rbSelectOptionMain.getSelectionModel().getSelectedItem() == "Administrador") {
+            administrador=true;
             try {
-                App.setRoot("VistaIniciarSesionAdministrador");
+                App.setRoot("VistaAdministrador");
             } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
             }
-        } else {
+        } else if(rbSelectOptionMain.getSelectionModel().getSelectedItem() == "Empleado"){
+            administrador = false;
             try {
-                App.setRoot("VistaIniciarSesionEmpleado");
+                App.setRoot("VistaEmpleado");
             } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
             }
+        }else{
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("Selección invalida");
+            alert.setContentText("Selecciona un puesto válido");
+            alert.showAndWait();
         }
+            
     }
 }
