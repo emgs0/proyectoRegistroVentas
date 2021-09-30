@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.ModificarEmpleadoController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.ModificarEmpleadoController">
    <center>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="555.0" BorderPane.alignment="CENTER">
          <children>
@@ -135,7 +135,7 @@
       </VBox>
    </center>
    <top>
-      <HBox style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="165.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="200.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
                <children>
@@ -190,7 +190,7 @@
       </HBox>
    </top>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
          <children>
             <Label text="Derechos de autor - sistema de gestión" textFill="WHITE">
                <font>

@@ -42,7 +42,7 @@ public class EmpleadoController implements Initializable{
 
     @FXML private void signOutEmployee(ActionEvent event) {
         try {
-            App.setRoot("VistaIniciarSesionEmpleado");
+            App.setRoot("VistaPrincipal");
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }

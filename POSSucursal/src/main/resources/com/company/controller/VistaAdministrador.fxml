@@ -8,59 +8,11 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.AdministradorController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.AdministradorController">
    <bottom>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <ComboBox fx:id="cBoxUsers" prefHeight="39.0" prefWidth="163.0">
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin></ComboBox>
-                  <Button fx:id="btnFilterUsers" mnemonicParsing="false" onAction="#filterUsers" text="Filtrar Usuario">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Venta Total">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtSales" alignment="CENTER_RIGHT" editable="false" prefHeight="30.0" prefWidth="150.0">
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin></TextField>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="btnAddModUser" mnemonicParsing="false" onAction="#addModUser" prefHeight="39.0" prefWidth="320.0" text="Agregar/Modificar Usuario">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="160.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="btnSignOutAdmin" mnemonicParsing="false" onAction="#signOutAdmin" prefHeight="39.0" prefWidth="150.0" text="Cerrar Sesión">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ed7d00;">
+            <HBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #ed7d00;">
                <children>
                   <Label text="Derechos de autor - sistema de gestión" textFill="WHITE">
                      <font>
@@ -83,7 +35,7 @@
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <TableView fx:id="tbSalesAdmin" prefHeight="262.0" prefWidth="621.0">
+            <TableView fx:id="tbSalesAdmin" prefHeight="229.0" prefWidth="960.0">
                <columns>
                   <TableColumn prefWidth="69.0" text="ID Venta" />
                   <TableColumn prefWidth="111.0" text="Fecha" />
@@ -95,11 +47,70 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </TableView>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="btnAddModUser" mnemonicParsing="false" onAction="#addModUser" prefHeight="39.0" prefWidth="320.0" text="Agregar/Modificar Usuario">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="160.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnSignOutAdmin" mnemonicParsing="false" onAction="#signOutAdmin" prefHeight="39.0" prefWidth="150.0" text="Cerrar Sesión">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <ComboBox fx:id="cBoxUsers" prefHeight="39.0" prefWidth="163.0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="btnFilterUsers" mnemonicParsing="false" onAction="#filterUsers" text="Filtrar Usuario">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Venta Total">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtSales" alignment="CENTER_RIGHT" editable="false" prefHeight="30.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </VBox>
    </center>
    <top>
-      <HBox style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="165.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="200.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
                <children>
