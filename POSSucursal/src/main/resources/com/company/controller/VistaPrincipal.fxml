@@ -18,55 +18,91 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.PrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.PrincipalController">
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="28.0" prefWidth="1207.0" text="Selecciona una opción para poder iniciar el sistema, ya sea como empleado o administrador" VBox.vgrow="ALWAYS">
+            <Label text="Iniciar Sesión" textAlignment="CENTER">
                <font>
-                  <Font name="Calibri Light" size="18.0" />
+                  <Font name="Calibri Light" size="36.0" />
                </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
             </Label>
-            <HBox alignment="CENTER" maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Iniciar el sistema como:">
+                  <Label fx:id="lblSelection" text="Nombre de usuario:">
                      <font>
-                        <Font name="Calibri Light" size="24.0" />
+                        <Font name="Calibri Light" size="18.0" />
                      </font>
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="rbSelectOptionMain" prefHeight="50.0" prefWidth="220.0" promptText="Seleccionar puesto" />
+                  <TextField fx:id="txtUserName" prefHeight="50.0" prefWidth="300.0" promptText="Ingrese usuario">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblSelection" text="Contraseña:">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="75.0" />
+                     </HBox.margin>
+                  </Label>
+                  <PasswordField fx:id="txtPassword" prefHeight="50.0" prefWidth="300.0" promptText="Ingresa contraseña">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="100.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Iniciar el sistema como:">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="90.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="rbSelectOptionMain" prefHeight="50.0" prefWidth="200.0" promptText="Seleccionar puesto" />
                </children>
                <VBox.margin>
-                  <Insets top="30.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
-            <Button fx:id="btnLoginMain" mnemonicParsing="false" onAction="#switchToLogin" text="Ingresar">
-               <VBox.margin>
-                  <Insets top="50.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <Label text="Si existen problemas con el sistema contacta a los administradores">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#switchToEmployee" prefHeight="50.0" prefWidth="120.0" text="Inicia sesión">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
          </children>
          <BorderPane.margin>
-            <Insets top="-50.0" />
+            <Insets />
          </BorderPane.margin>
       </VBox>
    </center>
    <top>
-      <HBox style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="165.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="200.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
                <children>
@@ -83,7 +119,7 @@
                   </Label>
                   <Label fx:id="lblDescription" text="Bienvenido al sistema de administracion y gestion de su compañia " textFill="WHITE">
                      <font>
-                        <Font name="Calibri Light" size="24.0" />
+                        <Font name="Calibri Light" size="18.0" />
                      </font>
                   </Label>
                   <TextField fx:id="txtDate" editable="false" maxWidth="180.0" prefHeight="34.0" prefWidth="240.0" promptText="Mostrar la fecha y hora actual del sistema">
@@ -126,7 +162,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #ed7d00;" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Derechos de autor - sistema de gestión" textFill="WHITE" HBox.hgrow="ALWAYS">
+            <Label text="Derechos de autor - sistema de gestión" textFill="WHITE">
                <font>
                   <Font name="Calibri Light" size="24.0" />
                </font>
