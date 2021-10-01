@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import Configurations.LoadImage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -40,28 +41,14 @@ public class PrincipalController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
         rbSelectOptionMain.setItems(optionEmployee);
         dateAndHour(this.txtDate);
+        
+        LoadImage.loadImageMain(this.imageMain);
+        
     }
     
-    public static void dateAndHour(TextField txtdate){
-         // Time and date
-        try {
-            Timer timer = new Timer();
-            TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");// 
-                    LocalDateTime now = LocalDateTime.now();
-                    txtdate.setText(dtf.format(now));
-                }
-            };
-            timer.schedule(task, 0, 1000);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
-
     @FXML
     private void switchToEmployee(ActionEvent event) {
         if (rbSelectOptionMain.getSelectionModel().getSelectedItem() == "Administrador") {
@@ -86,4 +73,29 @@ public class PrincipalController implements Initializable{
         }
             
     }
+    
+    public static void dateAndHour(TextField txtdate){
+        //cambair a la clase
+         // Time and date
+        try {
+            
+            Timer timer = new Timer();
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");// 
+                    LocalDateTime now = LocalDateTime.now();
+                    txtdate.setText(dtf.format(now));
+                }
+            };
+            
+            timer.schedule(task, 0, 1000);
+            
+        } catch (Exception e) {
+            
+            System.out.println("Error: " + e.getMessage());
+            
+        }
+    }
+    
 }

@@ -24,8 +24,7 @@ import javafx.scene.image.ImageView;
  */
 public class ListaEmpleadoController implements Initializable {
 
-    @FXML
-    private Label lblDescription;
+    @FXML private Label lblDescription;
     @FXML
     private Label lblTitle;
     @FXML
@@ -73,6 +72,7 @@ public class ListaEmpleadoController implements Initializable {
     @FXML
     private void deleteEmployee(ActionEvent event) {
     }
+    
 
     @FXML
     private void returnToAdministrador(ActionEvent event) {

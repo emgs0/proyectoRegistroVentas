@@ -1,12 +1,15 @@
 package com.company.controller;
 
+import Configurations.Alerts;
+import Configurations.CleanTextfield;
+import Configurations.LoadImage;
 import ConnectionDB.ConnDBH2;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -22,7 +25,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class AgregarEmpleadoController implements Initializable {
@@ -38,7 +40,9 @@ public class AgregarEmpleadoController implements Initializable {
     @FXML private RadioButton radioEmpleado;
     @FXML private Button btnRegistrarEmpleado;
     @FXML private Button btnCancelarRegistro;
-    private Button btnSee;
+  
+    // Lista de textfield
+    private List<TextField> listTextFields;
     
     // Agrupar radio buttons
     ToggleGroup tg = new ToggleGroup();
@@ -61,12 +65,16 @@ public class AgregarEmpleadoController implements Initializable {
         PrincipalController.dateAndHour(this.txtDate);
         
         // Cargar la imagen
-        Image img = new Image("/images/image-main.png");
-        this.imageMain.setImage(img);
+        LoadImage.loadImageMain(this.imageMain);
         
         this.radioAdmin.setToggleGroup(this.tg);
         this.radioEmpleado.setToggleGroup(this.tg);
         this.radioAdmin.setSelected(true);
+        
+        // Agregar los textfield a limpiar
+        this.listTextFields.add(this.txtUsuario);
+        this.listTextFields.add(this.txtContrasena);
+        this.listTextFields.add(this.txtContrasena2);
         
     }
 
@@ -114,19 +122,13 @@ public class AgregarEmpleadoController implements Initializable {
                         // confirmacion de la alerta
                         if(action.get() == ButtonType.OK) {
                             
-                            this.alert = new Alert(Alert.AlertType.INFORMATION);
-                            this.alert.setTitle("Nuevo empleado");
-                            this.alert.setContentText("¡Usuario agregado con exito!");
-                            this.alert.setHeaderText(null);
-                            this.alert.showAndWait();
-                            
+                            Alerts.alertInformation("Nuevo empleado", "¡Usuario agregado con exito!");
+                                                      
                             // Ejecutar el query 
                             preparedStatement.execute();
                             
                             // Limpiar los campos
-                            this.txtUsuario.setText("");
-                            this.txtContrasena.setText("");
-                            this.txtContrasena2.setText("");
+                            CleanTextfield.cleanAllTextfield(this.listTextFields);
                             this.radioAdmin.setSelected(true);
                             
                         } else {
@@ -145,23 +147,15 @@ public class AgregarEmpleadoController implements Initializable {
                     }
 
                 } else {
-
-                    this.alert = new Alert(Alert.AlertType.WARNING);
-                    this.alert.setTitle("Nuevo empleado");
-                    this.alert.setContentText("La contraseña no coinciden, verificalo por favor");
-                    this.alert.setHeaderText(null);
-                    this.alert.showAndWait();
+                    
+                    Alerts.alertWarning("Nuevo empleado", "La contraseña no coinciden, verificalo por favor");
 
                 }
 
             } else {
                 
-                this.alert = new Alert(Alert.AlertType.WARNING);
-                this.alert.setTitle("Nuevo empleado");
-                this.alert.setContentText("Existe campos vacios");
-                this.alert.setHeaderText(null);
-                this.alert.showAndWait();
-                
+                Alerts.alertWarning("Nuevo empleado", "Existen campos vacios");
+                      
             }
 
         }
@@ -169,18 +163,24 @@ public class AgregarEmpleadoController implements Initializable {
     }
 
     @FXML
-    private void returnToAdministrador(ActionEvent event) {
+    private void switchToAdministrador(ActionEvent event) {
+        
+        Object ev = event.getSource();
+        
+        if(ev.equals(this.btnCancelarRegistro)) {
+            
+            try {
 
-        try {
+                App.setRoot("VistaListaEmpleado");
 
-            App.setRoot("VistaListaEmpleado");
+            } catch (IOException e) {
 
-        } catch (IOException e) {
+                System.out.println("Error: " + e.getMessage());
 
-            System.out.println("Error: " + e.getMessage());
-
-        }
-
+            }
+            
+        } 
+        
     }
 
 }

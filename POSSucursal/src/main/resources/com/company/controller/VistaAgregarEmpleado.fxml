@@ -124,7 +124,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnCancelarRegistro" mnemonicParsing="false" onAction="#returnToAdministrador" prefHeight="40.0" prefWidth="115.0" text="Cancelar">
+                  <Button fx:id="btnCancelarRegistro" mnemonicParsing="false" onAction="#switchToAdministrador" prefHeight="40.0" prefWidth="115.0" text="Cancelar">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -177,9 +177,6 @@
             <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
                <children>
                   <ImageView fx:id="imageMain" fitHeight="136.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@image1.png" />
-                     </image>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
