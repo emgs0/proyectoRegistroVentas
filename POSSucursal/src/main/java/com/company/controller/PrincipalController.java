@@ -91,6 +91,7 @@ public class PrincipalController implements Initializable {
     private void switchToEmployee(ActionEvent event) {
         String username = txtUserName.getText();
         String password = txtPassword.getText();
+        String typeEmployee = rbSelectOptionMain.getSelectionModel().getSelectedItem();
 
         if (username.equals("")) {
             alert.setHeaderText("Campo USUARIO vacio");
@@ -102,20 +103,22 @@ public class PrincipalController implements Initializable {
             alert.showAndWait();
         } else {
             conn = SQL.connectionDbH2();
-            sSQL = "SELECT * FROM usersemployees WHERE username=? AND password=?";
+          sSQL = "SELECT * FROM useremployee WHERE user=? AND password=? AND typeemployee=?";
             try {
                 // PreparedStatement
                 PreparedStatement pstm = conn.prepareStatement(sSQL);
                 pstm.setString(1, username);
                 pstm.setString(2, password);
+                pstm.setString(3, typeEmployee);
                 rs = pstm.executeQuery();
                 if (rs.next()) {
-                    alertC.setHeaderText("Bienvenido " + username);
-                    alertC.show();
+
                     if (rbSelectOptionMain.getSelectionModel().getSelectedItem() == "Administrador") {
                         administrador = true;
                         try {
                             App.setRoot("VistaAdministrador");
+                            alertC.setHeaderText("Bienvenido " + username);
+                            alertC.show();
                         } catch (IOException e) {
                             System.out.println("Error: " + e.getMessage());
                         }
@@ -123,6 +126,8 @@ public class PrincipalController implements Initializable {
                         administrador = false;
                         try {
                             App.setRoot("VistaEmpleado");
+                            alertC.setHeaderText("Bienvenido " + username);
+                            alertC.show();
                         } catch (IOException e) {
                             System.out.println("Error: " + e.getMessage());
                         }
@@ -132,6 +137,7 @@ public class PrincipalController implements Initializable {
                         alert.setContentText("Selecciona un puesto válido");
                         alert.showAndWait();
                     }
+
                 } else {
                     alertE.setHeaderText("Error en Login");
                     alertE.setContentText("Ingrese usuario y contraseña válidos");
