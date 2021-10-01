@@ -14,7 +14,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("VistaAgregarEmpleado"));
+        scene = new Scene(loadFXML("VistaPrincipal"));
         stage.setScene(scene);
         stage.setTitle("Sistema de registro y administración");
         //stage.setResizable(false);
