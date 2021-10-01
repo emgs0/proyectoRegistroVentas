@@ -33,16 +33,24 @@ public class NuevaVentaController implements Initializable{
     }
 
     @FXML private void generateSale(ActionEvent event) {
+        
+        Object ev = event.getSource();
+        
+        if(ev.equals(this.btnGenerateSale)){
+            
+        }
     
         try {
+            
+        } catch (Exception e) {
+            System.out.println("Error:" + e.getMessage());
+        }
+        
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Alerta de nueva venta");
             alert.setContentText("Nueva venta reguistrada con exito!!");
             alert.setHeaderText(null);
             alert.showAndWait();
-        } catch (Exception e) {
-            System.out.println("Error:" + e.getMessage());
-        }
         
     }
 
