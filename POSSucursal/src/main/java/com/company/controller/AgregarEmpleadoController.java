@@ -22,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 
 public class AgregarEmpleadoController implements Initializable {
@@ -37,6 +38,9 @@ public class AgregarEmpleadoController implements Initializable {
     @FXML private RadioButton radioEmpleado;
     @FXML private Button btnRegistrarEmpleado;
     @FXML private Button btnCancelarRegistro;
+    
+    // Agrupar radio buttons
+    ToggleGroup tg = new ToggleGroup();
 
     // Generar la conexion
     private static final ConnDBH2 sql = new ConnDBH2();
@@ -49,6 +53,11 @@ public class AgregarEmpleadoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         PrincipalController.dateAndHour(this.txtDate);
+        
+        this.radioAdmin.setToggleGroup(this.tg);
+        this.radioEmpleado.setToggleGroup(this.tg);
+        
+        //this.txtContrasena.set
 
     }
 
@@ -60,15 +69,15 @@ public class AgregarEmpleadoController implements Initializable {
 
         if (evt.equals(this.btnRegistrarEmpleado)) {
 
-            if (!this.txtUsuario.getText().isEmpty() || !this.txtContrasena.getText().isEmpty() || this.txtContrasena2.getText().isEmpty()) {
-
+            if (!this.txtContrasena.getText().isEmpty() && !this.txtContrasena2.getText().isEmpty() && !this.txtUsuario.getText().isEmpty()) {
+                
                 if (this.txtContrasena.getText().equals(this.txtContrasena2.getText())) {
 
                     // Crear el query
                     querySql = "INSERT INTO usersemployees(userName, password) VALUES(?,?)";
                     
                     try {
-
+                    
                         //PreparedStatment
                         //bucar para que sirve esto
                         PreparedStatement preparedStatement = conn.prepareStatement(querySql);
@@ -78,13 +87,13 @@ public class AgregarEmpleadoController implements Initializable {
                         //conn.close();
 
                         System.out.println("datos almacenados");
-
+                    
                     } catch (SQLException e) {
-
+                    
                         System.out.println("Algo fallo: " + e.toString());
                         //bucar para que sirve esto
                         Logger.getLogger(AgregarEmpleadoController.class.getName()).log(Level.SEVERE, null, e);
-
+                    
                     }
 
                 } else {
@@ -98,13 +107,13 @@ public class AgregarEmpleadoController implements Initializable {
                 }
 
             } else {
-
+                
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Nuevo empleado");
                 alert.setContentText("Existe campos vacios");
                 alert.setHeaderText(null);
                 alert.showAndWait();
-
+                
             }
 
         }
