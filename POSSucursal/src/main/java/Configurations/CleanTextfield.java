@@ -4,18 +4,17 @@ package Configurations;
 import java.util.List;
 import javafx.scene.control.TextField;
 
-
 public class CleanTextfield {
     
-    //private static TextField texfield;
-
     public static void cleanAllTextfield(List<TextField> listTextField) {
         
         /*
         for(TextField item: listTextField) {
-        item.setText("");
+        
+            item.setText("");
+        
         }
-         */
+        */
         
         listTextField.forEach(item -> {
             

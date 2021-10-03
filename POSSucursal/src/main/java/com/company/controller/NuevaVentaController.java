@@ -1,6 +1,8 @@
 
 package com.company.controller;
 
+import Configurations.DataAndHour;
+import Configurations.LoadImage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,21 +31,26 @@ public class NuevaVentaController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        PrincipalController.dateAndHour(this.txtDate);
+        
+        DataAndHour.dateAndHour(this.txtDate);
+        
+        LoadImage.loadImageMain(this.imageMain);
+        
     }
 
-    @FXML private void generateSale(ActionEvent event) {
+    @FXML 
+    private void generateSale(ActionEvent event) {
         
         Object ev = event.getSource();
         
-        if(ev.equals(this.btnGenerateSale)){
-            
-        }
+        if(ev.equals(this.btnGenerateSale)){ }
     
         try {
             
         } catch (Exception e) {
+            
             System.out.println("Error:" + e.getMessage());
+            
         }
         
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -54,12 +61,17 @@ public class NuevaVentaController implements Initializable{
         
     }
 
-    @FXML private void switchToEmployee(ActionEvent event) { 
+    @FXML 
+    private void switchToEmployee(ActionEvent event) { 
     
         try {
+            
             App.setRoot("VistaEmpleado");
+            
         } catch (IOException e) {
+            
             System.out.println("Error: " + e.getMessage());
+            
         }
         
     }

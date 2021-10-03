@@ -5,6 +5,8 @@
  */
 package com.company.controller;
 
+import Configurations.DataAndHour;
+import Configurations.LoadImage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,55 +27,57 @@ import javafx.scene.image.ImageView;
  */
 public class AdministradorController implements Initializable {
 
-    @FXML
-    private TableView<?> tbSalesAdmin;
-    @FXML
-    private Button btnFilterUsers;
-    @FXML
-    private ComboBox<String> cBoxUsers;
-    @FXML
-    private Button btnSignOutAdmin;
-    @FXML
-    private TextField txtSales;
-    @FXML
-    private Button btnAddModUser;
-    @FXML
-    private Label lblTitle1;
-    @FXML
-    private Label lblDescription1;
-    @FXML
-    private TextField txtDate;
-    @FXML
-    private ImageView imageMain;
+    @FXML private TableView<?> tbSalesAdmin;
+    @FXML private Button btnFilterUsers;
+    @FXML private ComboBox<String> cBoxUsers;
+    @FXML private Button btnSignOutAdmin;
+    @FXML private TextField txtSales;
+    @FXML private Button btnAddModUser;
+    @FXML private Label lblTitle1;
+    @FXML private Label lblDescription1;
+    @FXML private TextField txtDate;
+    @FXML private ImageView imageMain;
 
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        PrincipalController.dateAndHour(this.txtDate);
+        
+        DataAndHour.dateAndHour(this.txtDate);
+        
+        LoadImage.loadImageMain(this.imageMain);
+        
     }    
 
     @FXML
-    private void filterUsers(ActionEvent event) {
-    }
+    private void filterUsers(ActionEvent event) { }
 
     @FXML
     private void signOutAdmin(ActionEvent event) {
-                try {
+        
+        try {
+            
             App.setRoot("VistaPrincipal");
+            
         } catch (IOException e) {
+            
             System.out.println("Error: " + e.getMessage());
+            
         }
+        
     }
 
     @FXML
     private void addModUser(ActionEvent event) {
-                try {
+        try {
+            
             App.setRoot("VistaListaEmpleado");
+            
         } catch (IOException e) {
+            
             System.out.println("Error: " + e.getMessage());
+            
         }
+        
     }
     
 }

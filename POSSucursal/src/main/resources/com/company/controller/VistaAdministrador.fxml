@@ -37,11 +37,11 @@
             </Label>
             <TableView fx:id="tbSalesAdmin" prefHeight="229.0" prefWidth="960.0">
                <columns>
-                  <TableColumn prefWidth="69.0" text="ID Venta" />
-                  <TableColumn prefWidth="111.0" text="Fecha" />
-                  <TableColumn prefWidth="155.0" text="Usuario" />
-                  <TableColumn prefWidth="290.0" text="Descrpición" />
-                  <TableColumn prefWidth="169.0" text="Monto Venta" />
+                  <TableColumn prefWidth="109.0" text="ID Venta" />
+                  <TableColumn prefWidth="128.0" text="Fecha" />
+                  <TableColumn prefWidth="134.0" text="Usuario" />
+                  <TableColumn prefWidth="201.0" text="Descrpición" />
+                  <TableColumn prefWidth="222.0" text="Monto Venta" />
                </columns>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
@@ -49,7 +49,7 @@
             </TableView>
             <HBox alignment="CENTER_RIGHT">
                <children>
-                  <Button fx:id="btnAddModUser" mnemonicParsing="false" onAction="#addModUser" prefHeight="39.0" prefWidth="320.0" text="Agregar/Modificar Usuario">
+                  <Button fx:id="btnAddModUser" mnemonicParsing="false" onAction="#addModUser" prefHeight="39.0" prefWidth="320.0" text="Agregar/Eliminar Usuario">
                      <font>
                         <Font size="18.0" />
                      </font>

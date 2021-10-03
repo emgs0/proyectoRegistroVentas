@@ -1,6 +1,8 @@
 
 package com.company.controller;
 
+import Configurations.DataAndHour;
+import Configurations.LoadImage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,25 +31,39 @@ public class EmpleadoController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        PrincipalController.dateAndHour(this.txtDate);
+        
+        DataAndHour.dateAndHour(this.txtDate);
+        
+        LoadImage.loadImageMain(this.imageMain);
+        
     }
 
     @FXML private void newSale(ActionEvent event) {
+        
         try {
+            
             App.setRoot("VistaNuevaVenta");
+            
         } catch (IOException e) {
+            
             System.out.println("Error: " + e.getMessage());
+            
         }
+        
     }
 
     @FXML private void signOutEmployee(ActionEvent event) {
+        
         try {
+            
             App.setRoot("VistaPrincipal");
+            
         } catch (IOException e) {
+            
             System.out.println("Error: " + e.getMessage());
+            
         }
+        
     }
-
-    
-    
+   
 }

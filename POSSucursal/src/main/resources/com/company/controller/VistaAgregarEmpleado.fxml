@@ -125,7 +125,7 @@
                                 <Insets right="20.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="btnCancelarRegistro" mnemonicParsing="false" onAction="#returnToAdministrador" prefHeight="40.0" prefWidth="115.0" text="Cancelar">
+                        <Button fx:id="btnCancelarRegistro" mnemonicParsing="false" onAction="#switchToAdministrador" prefHeight="40.0" prefWidth="115.0" text="Cancelar">
                             <font>
                                 <Font size="18.0" />
                             </font>

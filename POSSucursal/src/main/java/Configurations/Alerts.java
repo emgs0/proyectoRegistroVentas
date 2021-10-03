@@ -7,7 +7,6 @@ public class Alerts {
     
     private static Alert alert = new Alert(Alert.AlertType.NONE);
     
-    
     public static void alertWarning(String title, String contentText) {
     
         alert = new Alert(Alert.AlertType.WARNING);
