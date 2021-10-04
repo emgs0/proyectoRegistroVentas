@@ -59,9 +59,4 @@ public class Employee {
     public void setIdBranch(Integer idBranch) {
         this.idBranch = idBranch;
     }
-
-    
-    
-    
-
 }
