@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.application.Platform;
 
 public class App extends Application {
 
@@ -19,6 +20,11 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("Sistema de registro y administración");
         stage.show();
+        Platform.setImplicitExit(true);
+        stage.setOnCloseRequest((eh)->{
+            Platform.exit();
+            System.exit(0);
+        });
        
     }
 
