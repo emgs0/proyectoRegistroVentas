@@ -90,7 +90,7 @@ public class NuevaVentaController implements Initializable {
                 new_sale.setDate_sale(this.txtDate.getText());
                 
                 new_sale.setId_branch_office(1);
-                new_sale.setId_employee(6);
+                new_sale.setId_employee(32);
 
                 ObjectMapper mapper = new ObjectMapper();
                 String json;
